@@ -7,7 +7,8 @@ using NativeWebSocket;
 public class WebSocketManager : MonoBehaviour
 {
     public static WebSocketManager Instance { get; private set; }
-    
+
+    // ws://localhost:8080/ws
     private string wsURL = "ws://localhost:8080/ws";
     
     private WebSocket websocket;
