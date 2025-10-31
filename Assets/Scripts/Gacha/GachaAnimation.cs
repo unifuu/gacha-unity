@@ -282,10 +282,10 @@ public class GachaAnimation : MonoBehaviour
     {
         switch (rarity)
         {
-            case 5: return "★★★★★ SSR";
-            case 4: return "★★★★ SR";
-            case 3: return "★★★ R";
-            default: return "★";
+            case 5: return "SSR";
+            case 4: return "SR";
+            case 3: return "R";
+            default: return "N";
         }
     }
     

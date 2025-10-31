@@ -4,11 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using NativeWebSocket;
 
+[Serializable]
+public class WebSocketMessage
+{
+    public string type;
+    public string data;
+    public string error;
+}
+
 public class WebSocketManager : MonoBehaviour
 {
     public static WebSocketManager Instance { get; private set; }
-
-    // ws://localhost:8080/ws
+    
+    // Change to your backend WebSocket address
     private string wsURL = "ws://localhost:8080/ws";
     
     private WebSocket websocket;

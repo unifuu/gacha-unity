@@ -30,7 +30,7 @@ public class ResultCard : MonoBehaviour
         // Set rarity
         if (rarityText != null)
         {
-            rarityText.text = GetRarityStars(character.rarity);
+            rarityText.text = GetRarityText(character.rarity);
             rarityText.color = GetRarityColor(character.rarity);
         }
         
@@ -47,7 +47,7 @@ public class ResultCard : MonoBehaviour
         {
             characterImage.color = GetRarityColor(character.rarity);
             // In production, use this to load images:
-            // StartCoroutine(LoadImage(character.imageUrl));
+            StartCoroutine(LoadImage(character.imageUrl));
         }
         
         // Show NEW tag
@@ -71,14 +71,15 @@ public class ResultCard : MonoBehaviour
         }
     }
     
-    private string GetRarityStars(int rarity)
+    private string GetRarityText(int rarity)
     {
-        string stars = "";
-        for (int i = 0; i < rarity; i++)
+        switch (rarity)
         {
-            stars += "★";
+            case 5: return "SSR";
+            case 4: return "SR";
+            case 3: return "R";
+            default: return "R";
         }
-        return stars;
     }
     
     private System.Collections.IEnumerator PlayEntryAnimation()

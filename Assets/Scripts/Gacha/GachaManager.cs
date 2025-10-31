@@ -97,6 +97,8 @@ public class GachaManager : MonoBehaviour
     public void OnSinglePullClicked()
     {
         Debug.Log("OnSinglePullClicked");
+        
+        isProcessing = false;
 
         if (isProcessing) return;
         

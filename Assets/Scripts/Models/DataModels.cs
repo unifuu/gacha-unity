@@ -34,15 +34,6 @@ public class UserInfo
     public int pityCount;       // Current pity counter (0-90)
 }
 
-// WebSocket message wrapper
-[Serializable]
-public class WebSocketMessage
-{
-    public string type;         // Message type (e.g., "single_pull", "gacha_result")
-    public string data;         // JSON data as string
-    public string error;        // Error message if any
-}
-
 // Request to add currency (testing only)
 [Serializable]
 public class AddCurrencyRequest
