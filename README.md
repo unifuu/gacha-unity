@@ -1,6 +1,8 @@
 # Gacha-Unity
 
 ## Directory Structure
+
+```
 GachaGame/                                  # Unity Project Root
 ├── Assets/
 │   ├── Scenes/                             # Game Scenes
@@ -74,3 +76,4 @@ GachaGame/                                  # Unity Project Root
 └── Builds/                                 # Build output (not in version control)
     ├── iOS/                                # iOS build
     └── Android/                            # Android build
+```
