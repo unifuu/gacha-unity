@@ -114,13 +114,13 @@ public class GachaAnimation : MonoBehaviour
             yield return StartCoroutine(FlashEffect());
         }
         
-        // 5. Set rarity color
+        // 5. Get the ACTUAL character's rarity color (not random!)
         Color rarityColor = GetRarityColor(character.rarity);
         
-        // 6. Show card
+        // 6. Show card with CORRECT rarity color
         if (cardImage != null)
         {
-            // This should load character image, simplified version uses color
+            // Set the color to match the actual character rarity
             cardImage.color = rarityColor;
             
             if (!skipRequested)
@@ -133,7 +133,7 @@ public class GachaAnimation : MonoBehaviour
             }
         }
         
-        // 7. Play rarity sound
+        // 7. Play correct rarity sound based on ACTUAL character
         if (audioSource != null && !skipRequested)
         {
             AudioClip revealSound = GetRaritySound(character.rarity);
@@ -143,7 +143,7 @@ public class GachaAnimation : MonoBehaviour
             }
         }
         
-        // 8. Show rarity text
+        // 8. Show CORRECT rarity text for the actual character
         if (rarityText != null)
         {
             rarityText.text = GetRarityText(character.rarity);
@@ -282,10 +282,10 @@ public class GachaAnimation : MonoBehaviour
     {
         switch (rarity)
         {
-            case 5: return "SSR";
-            case 4: return "SR";
-            case 3: return "R";
-            default: return "N";
+            case 5: return "★★★★★ SSR";
+            case 4: return "★★★★ SR";
+            case 3: return "★★★ R";
+            default: return "★";
         }
     }
     
